@@ -123,8 +123,7 @@ header.trello-brand > .trello-logo svg {
 /**
  * Form
  */
-.section-wrapper > .account-form form.account-form input,
-.section-wrapper > .account-form form.account-form button[type="submit"] {
+.section-wrapper > .account-form form.account-form input {
   width: 100%;
   font-size: 14px;
   background-color: #fafbfc;
@@ -141,15 +140,16 @@ header.trello-brand > .trello-logo svg {
     border-color 0.2s ease-in-out 0s;
 }
 
-.section-wrapper > .account-form form.account-form input:focus,
-.section-wrapper > .account-form form.account-form button[type="submit"]:focus {
+.section-wrapper > .account-form form.account-form input:focus {
   background-color: white;
   border: 2px solid #4c9aff;
   box-shadow: 0 0 0;
 }
 
-.section-wrapper > .account-form form.account-form input[type="submit"],
-.section-wrapper > .account-form form.account-form button[type="submit"] {
+.section-wrapper
+  > .account-form
+  form.account-form
+  :is(input, button)[type="submit"] {
   background: #cdd2d4;
   background: -webkit-gradient(
     linear,
@@ -162,9 +162,10 @@ header.trello-brand > .trello-logo svg {
   border-radius: 0.3em;
   box-shadow: 0 2px 0 hsl(0deg 0% 30%);
   color: hsl(0, 0%, 30%);
-  display: inline-block;
+  display: block;
   font-weight: bold;
-  margin-bottom: 0.8em;
+  margin: 0 auto 0.8em;
+  width: 100%;
   padding: 0.6em 1.3em;
   position: relative;
   text-decoration: none;
@@ -185,33 +186,23 @@ header.trello-brand > .trello-logo svg {
 .section-wrapper
   > .account-form
   form.account-form
-  input[type="submit"]:not(:disabled),
-.section-wrapper
-  > .account-form
-  form.account-form
-  button[type="submit"]:not(:disabled) {
-  padding: 0.6em 1.3em;
-  border-radius: 0.3em;
-  color: #fff;
+  :is(input, button)[type="submit"]:not(:disabled) {
   background: #5aac44;
 }
 
 .section-wrapper
   > .account-form
   form.account-form
-  input[type="submit"]:not(:disabled):hover,
-.section-wrapper
-  > .account-form
-  form.account-form
-  button[type="submit"]:not(:disabled):hover {
+  :is(input, button)[type="submit"]:not(:disabled):hover {
   background: #61bd4f;
 }
 
-.section-wrapper > .account-form form.account-form input[type="submit"],
-.section-wrapper > .account-form form.account-form button[type="submit"] {
+.section-wrapper
+  > .account-form
+  form.account-form
+  :is(input, button)[type="submit"] {
   box-shadow: none;
   -webkit-appearance: button;
-  appearance: button;
   cursor: pointer;
   max-height: 35.2px;
 }
@@ -266,6 +257,14 @@ header.trello-brand > .trello-logo svg {
   padding-top: 0;
   margin-bottom: 12px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  color: #505f79;
   -webkit-transition:
     background-color 0.2s ease-in-out 0s,
     border-color 0.2s ease-in-out 0s;
